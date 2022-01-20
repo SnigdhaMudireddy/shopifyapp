@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+Edit Inventory Item
+</title>
+{% endblock %}
+
+
+
+{% block body %} 
+    <br>
+    <h2> Editing Inventory Item</h2>
+    <form action='/allitems/edit/{{item.id}}' method='POST'>
+        <!--
+        <label for="itemName">Item Name:</label> 
+        <input class="form-control" type='text' name='itemName' id='itemName' value ='{{item.itemName}}' aria-label="Enter item count">
+        <br>
+        <label for="itemDescription">Item Description:</label>
+        <textarea class="form-control" name='itemDescription' id="itemDescription" rows="3" aria-label="Enter item description">{{item.itemDescription}}</textarea>
+        <br>
+        <label for="itemCount">Item Count:</label> 
+        <input class="form-control" type='integer' name='itemCount' id='itemCount' value ='{{item.itemCount}}' aria-label="Enter number of items">
+        <br>
+        <label for="itemPrice">Item Price:</label> 
+        <input class="form-control" type='float' name='itemPrice' id='itemPrice' value ='{{item.itemPrice}}' aria-label="Enter price of each item($)">
+        <br>
+        <input type='submit' value='Edit item'>
+        -->
+        <br>
+        {{form.itemName.label()}}
+        {{form.itemName(class="form-control")}}
+        <br>
+        {{form.itemDescription.label(class='form-label')}}
+        {{form.itemDescription(class="form-control")}}
+        <br>
+        {{form.itemCount.label(class='form-label')}}
+        {{form.itemCount(class="form-control")}}
+        <br>
+        {{form.itemPrice.label(class='form-label')}}
+        {{form.itemPrice(class="form-control")}}
+        <br>
+        {{form.submit(class='btn btn-secondary')}}
+    </form>
+    <hr>
+
+{% endblock %}

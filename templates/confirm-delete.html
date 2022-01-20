@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+Confirm Delete
+</title>
+{% endblock %}
+
+{% block body %} 
+    <br>
+    <form action='/allitems/delete/{{item.id}}' method='POST'>
+        <h4>Are you sure you want to delete "{{item.itemName}}" ? If yes click "Confirm" else go back.</h4>
+        <input type='submit' value='Confirm'>
+    </form>
+    <hr>
+
+{% endblock %}

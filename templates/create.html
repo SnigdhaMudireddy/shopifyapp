@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+Inventory
+</title>
+{% endblock %}
+
+
+
+{% block body %} 
+    <br>
+    <h2> Create new Inventory Item</h2>
+    <form action='/allitems/addnew' method='POST'>
+        <!---<label for="itemName">Item Name:</label> 
+        <input class="form-control" type='text' name='itemName' id='itemName' placeholder="Enter the item name" aria-label="Enter item name">--->
+        {{form.itemName.label()}}
+        {{form.itemName(class="form-control")}}
+        <!--
+        <ul>
+            {% for error in form.itemName.errors %}
+                <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+        -->
+        <br>
+        <!---<label for="itemDescription">Item Description:</label>
+        <textarea class="form-control" name='itemDescription' id="itemDescription" rows="3" placeholder="Enter item description" aria-label="Enter item description"></textarea>--->
+        {{form.itemDescription.label(class='form-label')}}
+        {{form.itemDescription(class="form-control")}}
+        <br>
+        <!---<label for="itemCount">Item Count:</label> 
+        <input class="form-control" type='integer' name='itemCount' id='itemCount' placeholder="Enter number of items" aria-label="Enter number of items">--->
+        {{form.itemCount.label(class='form-label')}}
+        {{form.itemCount(class="form-control")}}
+        <br>
+        <!---<label for="itemPrice">Item Price:</label> 
+        <input class="form-control" type='float' name='itemPrice' id='itemPrice' placeholder="Enter price of each item($)" aria-label="Enter price of each item($)">--->
+        {{form.itemPrice.label(class='form-label')}}
+        {{form.itemPrice(class="form-control")}}
+        <!--
+        <ul>
+            {% for error in form.itemPrice.errors %}
+                <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+        -->
+        <br>
+        {{form.submit(class='btn btn-secondary')}}
+        <!---<input type='submit' value='Add item'>--->
+    </form>
+    <hr>
+
+{% endblock %}

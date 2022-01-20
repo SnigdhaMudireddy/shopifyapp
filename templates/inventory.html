@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+Inventory
+</title>
+{% endblock %}
+
+
+
+{% block body %} 
+<br>
+<a  href="#"> Github link to the project </a>
+<br>
+<a  href="/allitems/download" >Export Inventory Items data to a CSV </a>
+<br>
+<br>
+<div>
+    <h3 style="display:inline">All Inventory Items</h3>
+    <a class="btn btn-success float-right" href='/allitems/addnew'> + Add new inventory item</a>
+   
+</div>
+
+
+    <hr>
+    {% for item in items %}
+        <h4>
+            {{ item.itemName}}
+        </h4>
+        <ul>
+        <li><small style="white-space:pre-wrap"><b>Item Description: </b>{{ item.itemDescription}}</small></li>
+        <li><small><b>Item Count: </b>{{ item.itemCount}}</small></li>
+        <li><small><b>Price per item: </b> ${{item.itemPrice}}</small></li>
+        <li><small><b>Total Price: </b> ${{item.itemTotalPrice}}</small></li>
+        <li><small><b>Date of Produce: </b>{{ item.dateOfProduce}}</small></li>
+        </ul>
+        <a class="btn btn-danger" href='/allitems/delete/{{item.id}}'> Delete</a>
+        <a class="btn btn-primary" href='/allitems/edit/{{item.id}}'> Edit</a>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

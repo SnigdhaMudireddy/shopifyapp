@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+    Home
+</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<a href="#">Github Link to the project</a>
+<br>
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h3>Shopify Backend Developer Intern Challenge Summer 2022</h3>
+            <p>This project is an inventory tracking web application for a logistics company. </p>
+            <p>Basic CRUD functionality is implemented to create inventory items, edit them, delete them and to view a list of them</p>
+            <p>
+                <a class="btn btn-primary" href="/allitems" role="button">View/Add/Edit/Delete Inventory Items &raquo;</a>
+            </p>
+
+            <p>An additional feature:
+               Push a button export product data to a CSV
+               is also implemented</p>
+            <p>
+                <a class="btn btn-primary" href="/allitems/download" role="button">Export Inventory Items data to a CSV </a>
+            </p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
