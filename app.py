@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Inventory.db'
 app.config['SECRET_KEY']='secret key'
 db = SQLAlchemy(app)
 
-
+# database model
 class InventoryItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     itemName = db.Column(db.String(100), nullable=False)
